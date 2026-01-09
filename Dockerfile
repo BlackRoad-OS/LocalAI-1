@@ -325,6 +325,11 @@ COPY . .
 ## Otherwise just run the normal build
 RUN make build
 
+RUN if [ ! -d "/build/go-piper/piper/build/pi/lib/" ]; then \
+    mkdir -p /build/go-piper/piper/build/pi/lib/ \
+    touch /build/go-piper/piper/build/pi/lib/keep \
+    ; fi
+
 ###################################
 ###################################
 
